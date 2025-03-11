@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Games</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+    <h1>My Flash Games</h1>
+
+    <!-- First Flash Game -->
+    <h2>Game 1</h2>
+    <div id="game1-container"></div>
+
+    <!-- Second Flash Game -->
+    <h2>Game 2</h2>
+    <div id="game2-container"></div>
+
+    <!-- Third Flash Game -->
+    <h2>Game 3</h2>
+    <div id="game3-container"></div>
+
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("DOMContentLoaded", () => {
+            const ruffle = window.RufflePlayer.newest();
+
+            // Load First SWF Game
+            const player1 = ruffle.createPlayer();
+            document.getElementById("game1-container").appendChild(player1);
+            player1.load("DuckLife 3"); // Update with your actual first SWF file name
+
+            // Load Second SWF Game
+            const player2 = ruffle.createPlayer();
+            document.getElementById("game2-container").appendChild(player2);
+            player2.load("game2.swf"); // Update with your actual second SWF file name
+
+            // Load Third SWF Game
+            const player3 = ruffle.createPlayer();
+            document.getElementById("game3-container").appendChild(player3);
+            player3.load("game3.swf"); // Update with your actual third SWF file name
+        });
+    </script>
+</body>
+</html>
